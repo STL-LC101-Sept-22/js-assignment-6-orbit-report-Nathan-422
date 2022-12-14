@@ -10,6 +10,7 @@ import { Satellite } from '../satellite';
 export class OrbitListComponent implements OnInit {
 
   @Input() satellites: Satellite[];
+
   constructor() { }
 
   ngOnInit() {
@@ -25,6 +26,15 @@ export class OrbitListComponent implements OnInit {
 			}
 			return 0;
 		});
+	}
+
+	isAltRow(sat: Satellite) {
+
+		if (this.satellites.indexOf(sat) % 2) {
+			return '#b6b5b5';
+		}
+		
+		return '#dad8d8';
 	}
 
 }
